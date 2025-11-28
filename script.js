@@ -6,7 +6,6 @@ const createArray = () => {
     return arr
 }
 
-const arr = createArray()
 const shuffleArray = (arr) => {
     const shuffleArray = []
     const count = arr.length
@@ -17,4 +16,22 @@ const shuffleArray = (arr) => {
     }
     return shuffleArray
 }
-console.log(shuffleArray(arr))
+
+const createPanel = () => {
+    const content = document.querySelector('body')
+    content.innerHTML = ''
+    const panel = document.createElement('div')
+    panel.id = 'panel'
+    const numbers = shuffleArray(createArray())
+    numbers.forEach(number => {
+        const btn = document.createElement('button')
+        btn.textContent = number.toString()
+        panel.appendChild(btn)
+        btn.addEventListener( 'click', () => {
+            console.log(`press ${number}`)
+        })
+    })
+    content.appendChild(panel)
+}
+
+createPanel()
