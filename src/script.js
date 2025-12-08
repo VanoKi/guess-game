@@ -1,21 +1,6 @@
-const createArray = () => {
-    const arr= []
-    for (let i = 1; i < 10; i++) {
-        arr.push(i)
-    }
-    return arr
-}
+import {createArray} from "./utils/createArray";
+import {shuffleArray} from "./utils/shuffleArray";
 
-const shuffleArray = (arr) => {
-    const shuffleArray = []
-    const count = arr.length
-    for (let i = 0; i < count; i++) {
-        let n = (Math.trunc(Math.random()*(arr.length - 0)))
-        shuffleArray.push(arr[n])
-        arr.splice(n, 1)
-    }
-    return shuffleArray
-}
 
 const createPanel = () => {
     const content = document.querySelector('body')
