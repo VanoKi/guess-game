@@ -1,5 +1,5 @@
-import {createArray} from "./utils/createArray";
-import {shuffleArray} from "./utils/shuffleArray";
+import {createArray} from "./utils/createArray.js";
+import {shuffleArray} from "./utils/shuffleArray.js";
 
 
 const createPanel = () => {
