@@ -29,6 +29,7 @@ const createPanel = () => {
         panel.appendChild(btn)
         btn.addEventListener( 'click', () => {
             console.log(`press ${number}`)
+            createPanel()
         })
     })
     content.appendChild(panel)
