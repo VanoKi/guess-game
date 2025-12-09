@@ -2,6 +2,7 @@ import {createArray} from "./utils/createArray.js";
 import {shuffleArray} from "./utils/shuffleArray.js";
 
 const array = createArray()
+let missed = 3
 const createPanel = () => {
     const content = document.querySelector('body')
     content.innerHTML = ''
@@ -15,9 +16,10 @@ const createPanel = () => {
         btn.addEventListener( 'click', () => {
             console.log(`press ${number}`)
             const shifted = array.shift()
-            console.log(shifted === number)
-            console.log(shifted)
-            console.log(number)
+            if (shifted !== number) {
+              alert(`you missed, you have ${missed} attemps`)
+              missed -= 1
+            }
             createPanel()
         })
     })
