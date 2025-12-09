@@ -5,7 +5,7 @@ const array = createArray()
 let missed = 2
 
 const createPanel = () => {
-    const content = document.querySelector('body')
+    const content = document.querySelector('#container')
     content.innerHTML = ''
     const panel = document.createElement('div')
     panel.id = 'panel'
@@ -20,18 +20,18 @@ const createPanel = () => {
           missed -= 1;
           if (missed <= 0) {
             alert('You failed the test!');
-            return; // останавливаем дальнейшие действия
+            return;
           } else {
             alert(`You missed, you have ${missed} attempts left`);
           }
         } else {
-          array.shift(); // правильный клик
+          array.shift();
           if (array.length === 0) {
             alert('You passed the test!');
             return;
           }
         }
-        createPanel(); // перемешиваем кнопки
+        createPanel();
       });
     })
     content.appendChild(panel)
