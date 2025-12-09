@@ -1,7 +1,7 @@
 import {createArray} from "./utils/createArray.js";
 import {shuffleArray} from "./utils/shuffleArray.js";
 
-
+const array = createArray()
 const createPanel = () => {
     const content = document.querySelector('body')
     content.innerHTML = ''
@@ -14,6 +14,10 @@ const createPanel = () => {
         panel.appendChild(btn)
         btn.addEventListener( 'click', () => {
             console.log(`press ${number}`)
+            const shifted = array.shift()
+            console.log(shifted === number)
+            console.log(shifted)
+            console.log(number)
             createPanel()
         })
     })
